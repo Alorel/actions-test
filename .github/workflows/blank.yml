@@ -6,7 +6,6 @@ jobs:
   one:
     runs-on: ubuntu-16.04
     steps:
-        run: echo "$JOB_CONTEXT"
       - name: Dump steps context
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
