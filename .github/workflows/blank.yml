@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-latest
+          - &oobs ubuntu-latest
           - windows-latest
           - macOS-latest
     steps:
@@ -26,7 +26,7 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
   lint:
-    runs-on: ubuntu-latest
+    runs-on: *oobs
     steps:
     - uses: actions/checkout@master
     - name: Do a lint
