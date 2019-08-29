@@ -27,10 +27,11 @@ jobs:
     strategy:
       matrix:
         node_version:
-          - latest
           - 12.x
           - 10.x
     steps:
+    - name: Echo job ID
+      run: echo ${{ job.id }}
     - uses: actions/checkout@master
       with:
         fetch-depth: 1
