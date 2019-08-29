@@ -30,9 +30,8 @@ jobs:
           - 12.x
           - 10.x
     steps:
-    - name: Echo job ID
-      env:
-        JOB_CTX: ${{ toJson(job.container) }}
+    - env:
+        JOB_CTX: ${{ toJson(github) }}
       run: echo $JOB_CTX
     - uses: actions/checkout@master
       with:
