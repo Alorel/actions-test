@@ -13,7 +13,7 @@ jobs:
         os:
           - ubuntu-latest
           - windows-latest
-          - maxOS-latest
+          - macOS-latest
     steps:
     - uses: actions/checkout@master
     - name: Run a one-line script
