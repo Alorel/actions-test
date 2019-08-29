@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Echo job ID
       env:
-        JOB_CTX: toJson(job)
+        JOB_CTX: ${{ toJson(job) }}
       run: echo $JOB_CTX
     - uses: actions/checkout@master
       with:
