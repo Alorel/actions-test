@@ -7,5 +7,3 @@ jobs:
     steps:
       - name: Rebase
         uses: docker://cirrusactions/rebase:latest
-        secrets:
-          - GITHUB_TOKEN
