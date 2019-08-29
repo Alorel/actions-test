@@ -14,8 +14,9 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: hello-world
+          path: artifact
       - name: ls
-        run: ls -ltr
+        run: ls artifact -ltr
   build:
     runs-on: ubuntu-latest
     steps:
