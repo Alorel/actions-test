@@ -31,7 +31,9 @@ jobs:
           - 10.x
     steps:
     - name: Echo job ID
-      run: echo ${{ job.container.id }}
+      env:
+        JOB_CTX: toJson(job)
+      run: echo $JOB_CTX
     - uses: actions/checkout@master
       with:
         fetch-depth: 1
@@ -39,10 +41,10 @@ jobs:
       with:
         node-version: ${{ matrix.node_version }}
     - name: Create dummy artifact
-      if: matrix.node_version == 'latest'
+      if: matrix.node_version == '12.x'
       run: echo world > hello.txt
     - name: Upload artifacts
-      if: matrix.node_version == 'latest'
+      if: matrix.node_version == '12.x'
       uses: actions/upload-artifact@master
       with:
         name: hello-world
