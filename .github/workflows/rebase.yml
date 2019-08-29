@@ -8,4 +8,4 @@ jobs:
       - name: Rebase
         uses: docker://cirrusactions/rebase:latest
         env:
-          GITHUB_ACTION:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
