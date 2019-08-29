@@ -31,7 +31,7 @@ jobs:
           - 10.x
     steps:
     - name: Echo job ID
-      run: echo ${{ job.id }}
+      run: echo ${{ job.container.id }}
     - uses: actions/checkout@master
       with:
         fetch-depth: 1
