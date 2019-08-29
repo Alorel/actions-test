@@ -23,25 +23,22 @@ jobs:
       - name: ls
         run: ls artifact -ltr
   build:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         node_version:
+          - latest
           - 12.x
           - 10.x
-        os:
-          - ubuntu-latest
-          - macOS-latest
     steps:
     - uses: actions/checkout@master
-      if: matrix.os == 'ubuntu-latest'
+      if: matrix.node_version == 'latest'
       with:
         fetch-depth: 1
     - name: Create dummy artifact
-      if: matrix.os == 'ubuntu-latest'
+      if: matrix.node_version == 'latest'
       run: echo world > hello.txt
     - name: Upload artifacts
-      if: matrix.os == 'ubuntu-latest'
+      if: matrix.node_version == 'latest'
       uses: actions/upload-artifact@master
       with:
         name: hello-world
