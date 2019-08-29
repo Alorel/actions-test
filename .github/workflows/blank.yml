@@ -17,7 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
       with:
-        depth: 50
+        fetch-depth: 50
+        submodules: true
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
