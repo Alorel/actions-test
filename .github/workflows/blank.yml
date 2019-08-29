@@ -16,7 +16,7 @@ jobs:
           - macOS-latest
     steps:
     - uses: actions/checkout@master
-      width:
+      with:
         depth: 50
     - name: Run a one-line script
       run: echo Hello, world!
