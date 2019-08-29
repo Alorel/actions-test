@@ -32,9 +32,11 @@ jobs:
           - 10.x
     steps:
     - uses: actions/checkout@master
-      if: matrix.node_version == 'latest'
       with:
         fetch-depth: 1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node_version }}
     - name: Create dummy artifact
       if: matrix.node_version == 'latest'
       run: echo world > hello.txt
