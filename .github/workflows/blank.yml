@@ -23,6 +23,7 @@ jobs:
       - name: ls
         run: ls artifact -ltr
   build:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node_version:
