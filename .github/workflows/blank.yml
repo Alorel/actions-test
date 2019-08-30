@@ -6,7 +6,7 @@ jobs:
   nvm:
     runs-on: ubuntu-latest
     steps:
-      - uses: alorel-actions/nvm@dev
+      - uses: alorel-actions/nvm@67967c86fa4a5b0f0e0c6b64e4286b5fd8cb0697
       - run: nvm ls
 
 #jobs:
